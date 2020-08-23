@@ -1,3 +1,5 @@
+module.exports.hostname = 'localhost'; // change to the hostname or IP of your host
+module.exports.port = 80;
 module.exports.hamqthcall = 'your ham qth callsign';
 module.exports.hamqthapipw = 'your ham qth password';
 module.exports.hamqthprog = 'your program name';

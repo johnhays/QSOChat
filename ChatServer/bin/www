@@ -20,8 +20,9 @@ var customvars = require('../customvars');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || customvars.port);
 app.set('port', port);
+app.set('hostname',customvars.hostname);
 
 var db = new(cradle.Connection)().database('dash');
 var usernames = {};
@@ -74,7 +75,7 @@ var freqHTML = '';
 
 // var server = http.createServer(app);
 var server = http.createServer(app).listen(app.get('port'), app.get('hostname'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log( app.get('hostname') + ' server listening on port ' + app.get('port'));
 });
 
 var io = require('socket.io').listen(server,{ log: false});
