@@ -17,6 +17,10 @@ html
 				$('#status').html('Connected');
 			})
 
+			socket.on('logo', function(data) {
+				$('#logo img').attr('src',data);
+			});
+
 			socket.on('disconnect', function(err,data) {
 				$('#login').show();
 				$('#chat').hide();
@@ -55,7 +59,7 @@ html
 
 			socket.on('links', function(data) {
 				$('#linklist').empty();
-				console.log(data);
+				// console.log(data);
 				$.each(data, function(key,value) {
 					url = '<a href=\"' 
 						+ value.href
@@ -65,7 +69,7 @@ html
 						+ value.description 
 						+ '</a><br />';
 						
-					console.log(url);
+				// 	console.log(url);
 					$('#linklist').append(url);
 				});
 			})

@@ -82,11 +82,13 @@ var io = require('socket.io').listen(server,{ log: false});
 
 	
 io.sockets.on('connection', function(socket) {
+	// console.log(customvars);
 
 	io.sockets.emit('standardfreq', customvars.standardfreqs);
 	freqs();
 
 	io.sockets.emit('links', customvars.links);
+	io.sockets.emit('logo', customvars.logo);
 
 	socket.on('sendchat', function(data) {
 		io.sockets.emit('updatechat', socket.username, data);
