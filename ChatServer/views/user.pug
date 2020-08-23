@@ -6,7 +6,8 @@ fieldset
 		else
 			legend User Lookup
 		if u.picture
-			img.userimage(src='#{u.picture}')
+			-url = u.picture[0]
+			img.userimage(src=url)
 		.userdata
 			if _id
 				#usercall.callsign #{_id}
@@ -25,8 +26,9 @@ fieldset
 			| #{u.country}
 			br
 			if u.email
+				- emaila = 'mailto:'+u.email
 				| E-Mail: 
-				a(href='#{u.email}')
+				a(href=emaila)
 					| #{u.email}
 				br
 			if u.jabber
@@ -36,10 +38,12 @@ fieldset
 				| Skype: #{u.skype}
 				br
 			if u.web
-				a(href='#{u.web}' target='#{_id}') #{u.web}
+				- webURL = u.web[0]
+				a(href=webURL target='#{_id}') #{u.web}
 				br
 			if mapURL
-				a(href='#{mapURL}' target='#{_id}') Map
+				-mapit = mapURL
+				a(href=mapit target='#{_id}') Map
 				br
 				br
 	else

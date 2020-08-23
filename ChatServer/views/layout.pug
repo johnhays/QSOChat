@@ -53,6 +53,23 @@ html
 				$('.callsign').mouseover(function() { lookupcall($(this).text());});
 			})
 
+			socket.on('links', function(data) {
+				$('#linklist').empty();
+				console.log(data);
+				$.each(data, function(key,value) {
+					url = '<a href=\"' 
+						+ value.href
+						+ '\" target=\"new\" title=\"' 
+						+ value.description 
+						+ '\">'
+						+ value.description 
+						+ '</a><br />';
+						
+					console.log(url);
+					$('#linklist').append(url);
+				});
+			})
+
 			socket.on('stationdata', function(data) {
 				$('#userlookup').empty();
 				$('#userlookup').append(data);
