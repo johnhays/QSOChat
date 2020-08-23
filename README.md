@@ -28,7 +28,7 @@ cd QSOChat/ChatServer
 npm install
 edit routes/index.js with your HamQTH credentials -- https://www.hamqth.com/developers.php and various titles, logo, etc.
 
-copy customvars.js.example to customvars.js and edit customvars.js to change port or IP address, and customize with your login credentials .  By default it listens on all interfaces for both IPv4 and IPv6 and port 8008.
+copy customvars.js.example to customvars.js and edit customvars.js to change port or IP address, and customize with your login credentials .  By default it listens on all interfaces.
 
 Run with sudo ./bin/www or sudo npm start
 
