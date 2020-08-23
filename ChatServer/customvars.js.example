@@ -1,0 +1,8 @@
+module.exports.hamqthcall = 'your ham qth callsign';
+module.exports.hamqthapipw = 'your ham qth password';
+module.exports.hamqthprog = 'your program name';
+module.exports.title = 'D-STAR HF QSO Finder'; //change to your title for page
+module.exports.logo = '/images/d-star-logo.png'; //change to your logo in images directory
+module.exports.links = {}; //a JSON encoded list of links
+module.exports.standardfreqs = [ "50.2100", "28.5700", "24.9380", "21.3800", "18.1480", "14.3350", "7.2850", "3.8800" ]; //an array of frequencies to use for preselect buttons;
+
