@@ -72,6 +72,15 @@ html
 				// 	console.log(url);
 					$('#linklist').append(url);
 				});
+				prop = '<br/>'
+					+ '<div id="rigref-solar-widget">'
+					+ '<a href="https://rigreference.com/solar"' 
+					+ ' target="_blank">'
+					+ '<img src="https://rigreference.com/solar/img/tall" '
+					+ 'border="0">'
+					+ '</a>'
+					+ '</div>';
+				$('#linklist').append(prop);
 			})
 
 			socket.on('stationdata', function(data) {
